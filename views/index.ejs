@@ -99,10 +99,10 @@
         <div class="form-container">
             <form id="register-form">
                 <h2>Register</h2>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <label for="username-register">Username:</label>
+                <input type="text" id="username-register" name="username-register" required>
+                <label for="password-register">Password:</label>
+                <input type="password-register" id="password-register" name="password-register" required>
                 <lavel form="confirm-password">Confirm Password:</lavel>
                 <input type="password" id="confirm-password" name="confirm-password" required>
                 <button type="submit">Register</button>
@@ -120,7 +120,7 @@
         const registerSpan = $('#register-form span');
         const logoutButton = $('#close-session');
 
-        loginform?.addEventListener('submit',  (e) => {
+        loginForm?.addEventListener('submit',  (e) => {
             e.preventDefault();
             const username = $('#username').value;
             const password = $('#password').value;
@@ -136,7 +136,7 @@
                     loginSpan.innerHTML = 'Sesion Iniciada... Entrando...';
                     loginSpan.style.color = 'green';
                     setTimeout(() => {
-                        window.location.href = '/';
+                        window.location.href = '/protected';
                     }, 2000);
                 } else {
                     loginSpan.innerHTML = 'Usuario o contraseña incorrectos';
@@ -147,8 +147,8 @@
 
         registerForm?.addEventListener('submit', (e) => {
             e.preventDefault();
-            const username = $('#username').value;
-            const password = $('#password').value;
+            const username = $('#username-register').value;
+            const password = $('#password-register').value;
             const confirmPassword = $('#confirm-password').value;
 
             if (password !== confirmPassword) {
